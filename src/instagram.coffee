@@ -28,7 +28,7 @@ Instagram.set('client_secret', config.client_secret)
 module.exports = (robot) ->
   robot.respond /(insta tag)( me )?(.*)/i, (msg) ->
     count = 1
-    authenticateUser()
+    authenticateUser(msg)
     if msg.match[3]
       text = msg.match[3].trim()
       text = text.split(" ")
@@ -47,7 +47,7 @@ module.exports = (robot) ->
 
   robot.respond /(insta user)( me )?(.*)/i, (msg) ->
     count = 1
-    authenticate_user()
+    authenticateUser(msg)
     if  msg.match[3]
       text = msg.match[3].trim()
       text = text.split(" ")
@@ -73,7 +73,7 @@ module.exports = (robot) ->
 
 
 
-authenticateUser = () ->
+authenticateUser = (msg) ->
   unless config.client_key
     msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
     return
