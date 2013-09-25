@@ -50,6 +50,7 @@ module.exports = (robot) ->
   robot.respond /(insta user)( me )?(.*)/i, (msg) ->
     count = 1
     authenticateUser(msg)
+    console.log('MSG')
     if  msg.match[3]
       text = msg.match[3].trim()
       text = text.split(" ")
@@ -61,19 +62,18 @@ module.exports = (robot) ->
         #access_token: config.access_token
         complete: (data) ->
           user_id = data[0]['id']
+          console.log('User'+user_id)
           if user_id
             Instagram.users.recent
               user_id: user_id
               count: count
               access_token: config.access_token
               complete: (data) ->
+                console.log('Data'+data)
                 index = 0
                 while index < count
                   msg.send data[index]['images']['standard_resolution']['url']
                   index++
-
-
-
 
 authenticateUser = (msg) ->
   unless config.client_key
