@@ -28,7 +28,7 @@ module.exports = (robot) ->
       text = msg.match[3].trim()
       text = text.split(" ")
       tag =  text[0]
-      count = text[1] if text[1]
+      count = parseInt(text[1]) if text[1]
     else
       msg.send 'Please provied tag'
       return
