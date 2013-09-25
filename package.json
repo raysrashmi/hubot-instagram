@@ -20,14 +20,15 @@
   },
 
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "instagram-node-lib": "*"
   },
 
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",
-    "sinon": "*"
+    "sinon": "*",
   },
 
   "main": "index.coffee",
