@@ -1,6 +1,6 @@
 {
-  "name": "hubot-example",
-  "description": "An example script pacakage for Hubot",
+  "name": "hubot-instagram",
+  "description": "An instagram script pacakage for Hubot",
   "version": "1.0.0",
   "author": "Rashmi Yadav(@raysrashmi)",
   "license": "MIT",
@@ -12,11 +12,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-example.git"
+    "url": "git://github.com/raysrashmi/hubot-instagram.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-example/issues"
+    "url": "https://github.com/raysrashmi/hubot-instagram/issues"
   },
 
   "dependencies": {

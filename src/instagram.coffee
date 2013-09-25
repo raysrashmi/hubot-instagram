@@ -28,7 +28,7 @@ Instagram.set('client_secret', config.client_secret)
 module.exports = (robot) ->
   robot.respond /(insta tag)( me )?(.*)/i, (msg) ->
     count = 1
-    authenticate_user()
+    authenticateUser()
     if msg.match[3]
       text = msg.match[3].trim()
       text = text.split(" ")
@@ -38,7 +38,7 @@ module.exports = (robot) ->
       msg.send 'Please provied tag'
       return
     Instagram.tags.recent 
-      name: "#{tag}"
+      name: tag
       complete: (data) ->
         index = 0
         while index < count
@@ -73,7 +73,7 @@ module.exports = (robot) ->
 
 
 
-authenticate_user = () ->
+authenticateUser = () ->
   unless config.client_key
     msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
     return
