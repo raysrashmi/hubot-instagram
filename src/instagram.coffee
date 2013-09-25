@@ -8,7 +8,6 @@
 # Configuration:
 #   HUBOT_INSTAGRAM_CLIENT_KEY
 #   HUBOT_INSTAGRAM_ACCESS_KEY
-#   HUBOT_INSTAGRAM_ACCESS_TOKEN
 #
 # Commands:
 #   hubot insta tag <tag> <count>- Show recent instagram tags
@@ -21,7 +20,6 @@
 config =
   client_key:     process.env.HUBOT_INSTAGRAM_CLIENT_KEY
   client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
-  access_token:   process.env.HUBOT_INSTAGRAM_ACCESS_TOKEN
  
 Instagram = require('instagram-node-lib')
 Instagram.set('client_id', config.client_key)
@@ -46,34 +44,6 @@ module.exports = (robot) ->
         while index < count
           msg.send data[index]['images']['standard_resolution']['url']
           index++
-
-  robot.respond /(insta user)( me )?(.*)/i, (msg) ->
-    count = 1
-    authenticateUser(msg)
-    console.log('MSG')
-    if  msg.match[3]
-      text = msg.match[3].trim()
-      text = text.split(" ")
-      username =  text[0]
-      count =  text[1]
-      Instagram.users.search
-        q: username
-        count: 1
-        #access_token: config.access_token
-        complete: (data) ->
-          user_id = data[0]['id']
-          console.log('User'+user_id)
-          if user_id
-            Instagram.users.recent
-              user_id: user_id
-              count: count
-              access_token: config.access_token
-              complete: (data) ->
-                console.log('Data'+data)
-                index = 0
-                while index < count
-                  msg.send data[index]['images']['standard_resolution']['url']
-                  index++
 
 authenticateUser = (msg) ->
   unless config.client_key
