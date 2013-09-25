@@ -3,10 +3,12 @@
 #
 # Dependencies:
 #   "instagram-node-lib": "*"
+#   https://github.com/mckelvey/instagram-node-lib
 #
 # Configuration:
 #   HUBOT_INSTAGRAM_CLIENT_KEY
 #   HUBOT_INSTAGRAM_ACCESS_KEY
+#   HUBOT_INSTAGRAM_ACCESS_TOKEN
 #
 # Commands:
 #   hubot insta tag <tag> <count>- Show recent instagram tags
