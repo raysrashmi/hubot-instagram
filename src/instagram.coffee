@@ -1,5 +1,5 @@
 # Description:
-#   gets photos of hash tag
+#   Get instagram images by hash tag
 #
 # Dependencies:
 #   "instagram-node-lib": "*"
