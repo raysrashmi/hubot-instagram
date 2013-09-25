@@ -34,8 +34,10 @@ module.exports = (robot) ->
       return
     Instagram.tags.recent 
       name: tag
+      count: count
       complete: (data) ->
         index = 0
+        console.log('Count'+data.length)
         while index < count
           msg.send data[index]['images']['standard_resolution']['url']
           index++
