@@ -36,7 +36,7 @@ module.exports = (robot) ->
       count: count
       complete: (data) ->
        for item in data
-          msg.send item[index]['images']['standard_resolution']['url']
+          msg.send item['images']['standard_resolution']['url']
 
 authenticateUser = (msg) ->
   config =
