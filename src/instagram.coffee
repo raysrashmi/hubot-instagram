@@ -17,13 +17,8 @@
 #   raysrashmi
 #
 
-config =
-  client_key:     process.env.HUBOT_INSTAGRAM_CLIENT_KEY
-  client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
- 
+
 Instagram = require('instagram-node-lib')
-Instagram.set('client_id', config.client_key)
-Instagram.set('client_secret', config.client_secret)
 
 module.exports = (robot) ->
   robot.respond /(insta tag)( me )?(.*)/i, (msg) ->
@@ -46,12 +41,18 @@ module.exports = (robot) ->
           index++
 
 authenticateUser = (msg) ->
+  config =
+    client_key:     process.env.HUBOT_INSTAGRAM_CLIENT_KEY
+    client_secret:  process.env.HUBOT_INSTAGRAM_ACCESS_KEY
+ 
   unless config.client_key
     msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
     return
   unless config.client_secret
     msg.send "Please set the HUBOT_TWITTER_ACCESS_TOKEN environment variable."
     return
+  Instagram.set('client_id', config.client_key)
+  Instagram.set('client_secret', config.client_secret)
 
           
 
