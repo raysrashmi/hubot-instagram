@@ -36,11 +36,8 @@ module.exports = (robot) ->
       name: tag
       count: count
       complete: (data) ->
-        index = 0
-        console.log('Count'+data.length)
-        while index < count
-          msg.send data[index]['images']['standard_resolution']['url']
-          index++
+       for item in data
+          msg.send item[index]['images']['standard_resolution']['url']
 
 authenticateUser = (msg) ->
   config =
