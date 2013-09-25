@@ -25,8 +25,7 @@ module.exports = (robot) ->
     count = 1
     authenticateUser(msg)
     if msg.match[3]
-      text = msg.match[3].trim()
-      text = text.split(" ")
+      text = msg.match[3].trim().split(" ")
       tag =  text[0]
       count = parseInt(text[1]) if text[1]
     else
