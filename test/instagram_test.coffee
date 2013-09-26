@@ -16,8 +16,10 @@ describe "Instagram", ->
       random: sinon.spy()
     @instagram = instagram_module(@robot)
 
-  describe "Get photos of a hashtag", ->
+  describe "Get images", ->
 
-    it "get one photo of rays", ->
+    it "get one images of rays", ->
       expect(@robot.respond).to.have.been.calledWith(/insta tag.*rays/)
 
+    it "get one images of raysrashmi", ->
+      expect(@robot.respond).to.have.been.calledWith(/insta user.*raysrashmi/)
