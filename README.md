@@ -1,6 +1,4 @@
 # Hubot Instagram
-
-[![Build Status](https://travis-ci.org/raysrashmi/hubot-instagram.png?branch=master)](https://travis-ci.org/raysrashmi/hubot-principles)
 Fetch instagram images by given hash tag
 
 ##Config
