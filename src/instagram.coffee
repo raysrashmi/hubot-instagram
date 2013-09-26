@@ -47,7 +47,7 @@ authenticateUser = (msg) ->
     msg.send "Please set the HUBOT_INSTAGRAM_CLIENT_KEY environment variable."
     return
   unless config.client_secret
-    msg.send "Please set the HUBOT_TWITTER_ACCESS_TOKEN environment variable."
+    msg.send "Please set the HUBOT_INSTAGRAM_ACCESS_TOKEN environment variable."
     return
   Instagram.set('client_id', config.client_key)
   Instagram.set('client_secret', config.client_secret)
