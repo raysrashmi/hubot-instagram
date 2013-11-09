@@ -1,8 +1,10 @@
 # Hubot Instagram
 Fetch instagram images by given hash tag
 
-##Config
+## Config
+
 HUBOT_INSTAGRAM_CLIENT_KEY
+
 HUBOT_INSTAGRAM_ACCESS_KEY
 
 
